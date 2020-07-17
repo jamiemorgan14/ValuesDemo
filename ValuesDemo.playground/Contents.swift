@@ -154,3 +154,159 @@ print(oneSidedRange.contains(25000000)) // true
 
 // Loops
 
+// for-in
+for number in closedRange {
+    print(number)
+}
+
+for integer in 0..<5 {
+    print(integer)
+}
+
+for number in halfOpenRange.reversed() {
+    print(number)
+}
+
+// while loops
+var y = 0
+while y < 50 {
+    y += 5
+    print("y is \(y)")
+}
+
+// repeat-while
+// comparable to a do-while loop in other languages
+// runs once before evaluating conditions
+var x = 0
+repeat {
+    x += 5
+    print("x is \(x)")
+} while x < 50
+
+// Arrays
+// values must be same type
+// 0 index
+// if created with LET keyword, array values can't be changed, but can be changed if created with VAR
+var shoppingList = ["Eggs", "Milk"]
+var arrayLength = shoppingList.count
+print(shoppingList.isEmpty)
+
+// append adds element to end
+shoppingList.append("Bread")
+// insert adds element at specified position
+shoppingList.insert("Bananas", at: 1)
+
+// access elements using bracket notation
+print(shoppingList[1])
+// add elements at certain index
+shoppingList[2] = "Cheese"
+print(shoppingList)
+
+// remove an item
+// removing returns the removed item
+let removedItem = shoppingList.remove(at: 1)
+print(removedItem, shoppingList)
+
+// iterate over array
+for shoppingItem in shoppingList {
+    print(shoppingItem)
+}
+
+// iterate over array starting at certain element
+for shoppingItem in shoppingList[1...] {
+    print(shoppingItem)
+}
+
+// Dictionaries
+// Key: value pairs, all keys in dict must be of same type, and all values must be of same type
+// if created with LET, it can't be changed
+var contactList = [
+    "Jake": "222-222-2222",
+    "Stephanie": "333-333-3333"
+]
+
+// check length and contents similarly to array
+contactList.count
+contactList.isEmpty
+
+// add elements to dictionary
+contactList["Ryan"] = "444-444-4444"
+contactList["Ryan"] // returns ryans number
+
+// change value of dictionary entry
+contactList["Ryan"] = "999-999-9999"
+contactList
+
+// removing item from dictionary
+contactList["Jake"] = nil
+contactList
+
+// assign removed value to variable
+var oldContactValue = contactList.removeValue(forKey: "Ryan")
+oldContactValue
+contactList
+
+// iterate over dictionary
+for (name, contactNumber) in contactList {
+    print("\(name) : \(contactNumber)")
+}
+// dictionaries are unsorted, so the above may return in an unexpected order, but every item will be printed
+
+// Sets
+// A set stores values in an unordered list
+// If created with LET, the contents can't be changed
+
+// creating a set
+var movieGenres: Set = ["Horror", "Comedy", "Action"]
+movieGenres.count
+movieGenres.isEmpty
+
+// add items to sets using insert
+movieGenres.insert("Adventure")
+movieGenres
+
+// check if a set contains an item
+movieGenres.contains("Comedy")
+
+// remove items using remove
+var oldSetValue = movieGenres.remove("Action")
+
+// remove all values from set with removeall
+//movieGenres.removeAll()
+//movieGenres.isEmpty // will be true since all elements removed
+
+// iterate over set
+for genre in movieGenres {
+    print(genre)
+}
+
+// Set Operations
+let movieGenres2: Set = ["SciFi", "War", "Comedy"]
+
+// union returns a new set which combines two sets
+movieGenres.union(movieGenres2)
+
+// intersection returns a new set of the common items in two different Sets
+movieGenres.intersection(movieGenres2)
+
+// subtracting will return a new Set without the values in the specified set
+// in this case, "Horror" and "Adventure" are returned, as they are not a part of movieGenres2. Comedy is not returned as it is common among both sets
+movieGenres.subtracting(movieGenres2)
+
+// symmetricDifference will return a new set without the values common to both sets
+movieGenres.symmetricDifference(movieGenres2)
+
+// Set Membership Equality
+// isEqual will check if all members of a set are the same as those of another
+movieGenres == movieGenres2
+
+// is subset checks whether a set is a subset of another set
+movieGenres2.isSubset(of: movieGenres)
+
+// is superset checks whether a set is a superset of another set
+movieGenres.isSuperset(of: movieGenres2)
+
+// is disjoint checks whether a set has no values in common with another set
+let movieGenresDisjoint: Set = ["Romantic Comedy"]
+movieGenresDisjoint.isDisjoint(with: movieGenres)
+
