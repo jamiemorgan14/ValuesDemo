@@ -127,7 +127,7 @@ var favoriteAnimal: String
 
 var secondFavoriteAnimal: String?
 secondFavoriteAnimal = "Turtles"
-print(secondFavoriteAnimal)
+//print(secondFavoriteAnimal)
 //let friendlyGreeting = "I like " + secondFavoriteAnimal! // must be unwrapped
 
 // handle with optional binding
