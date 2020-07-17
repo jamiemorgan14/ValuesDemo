@@ -49,7 +49,7 @@ isThereAMatch(listOfNumbers: numbersList, condition: oddNumber)
 
 // Using a guard statement to exit function early
 
-func buySomething(itemValueField: String, cardBalance: Int) -> Int {
+func buySomething(ItemValueAsString itemValueField: String, cardBalance: Int) -> Int {
     guard let itemValue = Int(itemValueField) else {
         print("error in item value")
         return cardBalance
@@ -58,9 +58,21 @@ func buySomething(itemValueField: String, cardBalance: Int) -> Int {
     return remainingBalance
 }
 
-print(buySomething(itemValueField: "10", cardBalance: 50))
-print(buySomething(itemValueField: "blue", cardBalance: 50))
+print(buySomething(ItemValueAsString: "10", cardBalance: 50))
+print(buySomething(ItemValueAsString: "Blue", cardBalance: 50))
 // A guard statement checks to see whether a condition is true; if no, it exits the function. Here, we check if the value the user entered is a valid number. When it's not, the guard statement handles the invalid input by executing the else clause
+
+// Using _ in function arguments
+// In Swift, the name of the function arguments are required by default
+// if we try and call buySomething with the concise syntax we're used to in other languages, we'll get an error
+//buySomething("10", 50) // uncomment to see
+
+// we can remove this requirement by adding _ as the argument label lists when we define a function
+func keepItDry(_ firstParameter: String, ParameterTwo secondParameter: Int) -> String {
+    return "This function doesn't do much, but we don't have to repeat ourselves every time it's called :)"
+}
+
+print(keepItDry("hi", ParameterTwo: 100))
 
 // Closures act like functions, but don't have names
 // Closures can be assigned to a constant or variable
