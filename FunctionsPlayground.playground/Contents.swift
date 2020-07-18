@@ -1,7 +1,5 @@
 import UIKit
 
-var str = "Hello, playground"
-
 // Functions and Closures
 // func functionName(parameter1: paramerterType, ...) -> returnType {
 //     code
