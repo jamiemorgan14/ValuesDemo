@@ -52,6 +52,10 @@ let dog = Mammal(name: "Dog", sound: "Woof", numberOfLegs: 4, breathesOxygen: tr
 print(dog.hasHairOrFur)
 print(dog.describe())
 
+// dump can be used for debugging, as it prints all data from a class, whereas printing a class instance will just print the name
+print(dog)
+dump(dog)
+
 // Structures
 // Structures, like Classes, group together properties and methods that represent and object.
 // Instances of structures can also be made
