@@ -128,7 +128,7 @@ var favoriteAnimal: String
 var secondFavoriteAnimal: String?
 secondFavoriteAnimal = "Turtles"
 //print(secondFavoriteAnimal)
-//let friendlyGreeting = "I like " + secondFavoriteAnimal! // must be unwrapped
+//let friendlyGreeting = "I like " + secondFavoriteAnimal! // must be unwrapped (covered below)
 
 // handle with optional binding
 var carName: String?
@@ -138,6 +138,14 @@ if let car = carName {
     print(favoriteCar)
 }
 // if carName has a value, it will be unwrapped and assigned to car, and the if statement will return true. The statements in the braces will be executed and the constant favoriteCar will be assigned "My favorite car is " + car and be printed. Note that car is not optional.
+
+// Unwrapping variables
+var canBeNil: Int? = 4
+// if we remove the ? from above, the assignment to nil will throw an error
+canBeNil = nil
+// below, we print our canBeNil variable, but it must be unwrapped.
+// if we remove the ! from the print statement, there will be warnings about type coercion
+print(canBeNil!)
 
 // range operators
 // if we want to log the numbers 10, this can be done by doing the following
