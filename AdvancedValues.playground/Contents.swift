@@ -139,3 +139,14 @@ for obj in livingBeingArray
 
 
 // Guard statements
+var value: Int? = 1
+//value = nil
+
+func testGuard() -> Int {
+    // We don't need ! here to unwrap value, because it is implicitly optional since we are using it in a guard statement
+    guard let val = value else {
+        return 0
+    }
+    return val
+}
+print(testGuard())
